@@ -1,0 +1,32 @@
+site_name: Serika.dev API Documentation
+site_description: Documentation for using Serika.dev Customer API
+site_url: https://serika-dev-docs.readthedocs.io/
+
+theme:
+  name: readthedocs
+  highlightjs: true
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - API Reference:
+    - Overview: api/overview.md
+    - Authentication: api/authentication.md
+    - Chat Completions: api/chat-completions.md
+    - Text Generation: api/text-generation.md
+    - Image Generation: api/image-generation.md
+    - Characters: api/characters.md
+  - Guides:
+    - API Keys: guides/api-keys.md
+    - Billing: guides/billing.md
+    - Best Practices: best-practices.md
+  - Examples: examples.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+
+plugins:
+  - search 
