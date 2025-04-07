@@ -29,7 +29,7 @@ To get started with the Serika.dev API, follow these steps:
 All API requests should be made to the following base URL:
 
 ```
-https://api.serika.dev/v1
+https://api.serika.dev/api/openai/v1
 ```
 
 ## Support
@@ -39,14 +39,14 @@ If you have any questions or need assistance, please contact us at support@serik
 ```bash
 # Example: Making a request with your API key
 curl -X POST \
-  https://api.serika.dev/v1/chat/completions \
+  https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [
       {"role": "user", "content": "Hello, how are you?"}
     ],
-    "model": "gpt-3.5-turbo"
+    "model": "euryale-70b"
   }'
 ```
 

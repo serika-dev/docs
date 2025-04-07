@@ -7,7 +7,7 @@ The Serika.dev Customer API provides several endpoints for interacting with Seri
 All API requests should be made to the following base URL:
 
 ```
-https://api.serika.dev
+https://api.serika.dev/api/openai/v1
 ```
 
 ## Available Endpoints
@@ -16,30 +16,30 @@ https://api.serika.dev
 
 | Endpoint | Description |
 |----------|-------------|
-| `/v1/chat/completions` | Generate conversational responses with AI models |
-| `/v1/generate/text` | Legacy endpoint for text generation |
-| `/v1/images/generations` | Generate images from text prompts |
-| `/v1/generate/image` | Legacy endpoint for image generation |
+| `/chat/completions` | Generate conversational responses with AI models |
+| `/generate/text` | Legacy endpoint for text generation |
+| `/images/generations` | Generate images from text prompts |
+| `/generate/image` | Legacy endpoint for image generation |
 
 ### Models
 
 | Endpoint | Description |
 |----------|-------------|
-| `/v1/models` | List available AI models |
+| `/models` | List available AI models |
 
 ### Characters
 
 | Endpoint | Description |
 |----------|-------------|
-| `/v1/characters` | List available characters |
-| `/v1/characters/:id` | Get details about a specific character |
+| `/characters` | List available characters |
+| `/characters/:id` | Get details about a specific character |
 
 ### API Keys & Usage
 
 | Endpoint | Description |
 |----------|-------------|
-| `/v1/keys` | Manage API keys |
-| `/v1/usage` | Get API usage statistics |
+| `/keys` | Manage API keys |
+| `/usage` | Get API usage statistics |
 
 ## Authentication
 
@@ -98,7 +98,7 @@ All responses are returned in JSON format. Successful responses typically includ
   "id": "chatcmpl-123abc",
   "object": "chat.completion",
   "created": 1677858242,
-  "model": "gpt-3.5-turbo",
+  "model": "euryale-70b",
   "choices": [
     {
       "index": 0,

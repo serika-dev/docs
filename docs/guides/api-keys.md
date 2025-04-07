@@ -109,14 +109,14 @@ For detailed information about billing and usage, see the [Billing](billing.md) 
 ### Using API Keys with cURL
 
 ```bash
-curl -X POST https://api.serika.dev/v1/chat/completions \
+curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [
       {"role": "user", "content": "Hello, how are you?"}
     ],
-    "model": "gpt-3.5-turbo"
+    "model": "euryale-70b"
   }'
 ```
 
@@ -128,12 +128,12 @@ const axios = require('axios');
 async function generateCompletion() {
   try {
     const response = await axios.post(
-      'https://api.serika.dev/v1/chat/completions',
+      'https://api.serika.dev/api/openai/v1/chat/completions',
       {
         messages: [
           {role: 'user', content: 'Hello, how are you?'}
         ],
-        model: 'gpt-3.5-turbo'
+        model: 'euryale-70b'
       },
       {
         headers: {
@@ -161,7 +161,7 @@ import requests
 api_key = os.environ.get("SERIKA_API_KEY")
 
 response = requests.post(
-    "https://api.serika.dev/v1/chat/completions",
+    "https://api.serika.dev/api/openai/v1/chat/completions",
     headers={
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
@@ -170,7 +170,7 @@ response = requests.post(
         "messages": [
             {"role": "user", "content": "Hello, how are you?"}
         ],
-        "model": "gpt-3.5-turbo"
+        "model": "euryale-70b"
     }
 )
 

@@ -36,14 +36,14 @@ x-api-key: sk-your-api-key
 ### Example Request with Authentication
 
 ```bash
-curl -X POST https://api.serika.dev/v1/chat/completions \
+curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [
       {"role": "user", "content": "Hello, how are you?"}
     ],
-    "model": "gpt-3.5-turbo"
+    "model": "euryale-70b"
   }'
 ```
 
@@ -66,12 +66,12 @@ Here's how permissions map to specific endpoints:
 
 | Endpoint | Required Permission |
 |----------|---------------------|
-| `/v1/chat/completions` | `text_generation` |
-| `/v1/generate/text` | `text_generation` |
-| `/v1/images/generations` | `image_generation` |
-| `/v1/generate/image` | `image_generation` |
-| `/v1/characters/*` | `character_info` |
-| `/v1/users/*` | `user_info` |
+| `/chat/completions` | `text_generation` |
+| `/generate/text` | `text_generation` |
+| `/images/generations` | `image_generation` |
+| `/generate/image` | `image_generation` |
+| `/characters/*` | `character_info` |
+| `/users/*` | `user_info` |
 
 Accessing an endpoint without the required permission will result in a `403 Forbidden` error with a message indicating the missing permission.
 

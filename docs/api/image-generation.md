@@ -2,15 +2,15 @@
 
 Serika.dev offers two endpoints for generating images from text prompts:
 
-1. `/v1/images/generations` - The primary endpoint (OpenAI-compatible)
-2. `/v1/generate/image` - Legacy endpoint
+1. `/images/generations` - The primary endpoint (OpenAI-compatible)
+2. `/generate/image` - Legacy endpoint
 
 This documentation covers both endpoints.
 
 ## Primary Endpoint: Images Generations
 
 ```
-POST /v1/images/generations
+POST /images/generations
 ```
 
 ### Request Parameters
@@ -18,7 +18,7 @@ POST /v1/images/generations
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `prompt` | string | Yes | The text description of the image to generate. |
-| `model` | string | No | The model to use for generation. Defaults to `nai-diffusion-3`. |
+| `model` | string | No | The model to use for generation. Defaults to `novelai/nai-diffusion-3`. |
 | `n` | integer | No | The number of images to generate. Defaults to 1. Maximum is 10. |
 | `size` | string | No | The size of the generated images. Defaults to `1024x1024`. |
 | `response_format` | string | No | The format in which the generated images are returned. Only `url` is supported currently. |
@@ -31,12 +31,12 @@ POST /v1/images/generations
 ### Example Request
 
 ```bash
-curl -X POST https://api.serika.dev/v1/images/generations \
+curl -X POST https://api.serika.dev/api/openai/v1/images/generations \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "A majestic mountain landscape at sunset with a lake in the foreground",
-    "model": "nai-diffusion-3",
+    "model": "novelai/nai-diffusion-3",
     "n": 1,
     "size": "1024x1024"
   }'
@@ -45,12 +45,12 @@ curl -X POST https://api.serika.dev/v1/images/generations \
 ### Advanced Example
 
 ```bash
-curl -X POST https://api.serika.dev/v1/images/generations \
+curl -X POST https://api.serika.dev/api/openai/v1/images/generations \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "A cyberpunk cityscape with neon lights and flying cars",
-    "model": "nai-diffusion-3",
+    "model": "novelai/nai-diffusion-3",
     "n": 1,
     "size": "1024x1024",
     "negative_prompt": "blurry, bad quality, disfigured, low resolution",
@@ -79,7 +79,7 @@ curl -X POST https://api.serika.dev/v1/images/generations \
 To generate multiple images with the same prompt, use the `n` parameter:
 
 ```bash
-curl -X POST https://api.serika.dev/v1/images/generations \
+curl -X POST https://api.serika.dev/api/openai/v1/images/generations \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -113,7 +113,7 @@ Response:
 ## Legacy Endpoint: Generate Image
 
 ```
-POST /v1/generate/image
+POST /generate/image
 ```
 
 ### Request Parameters
@@ -121,7 +121,7 @@ POST /v1/generate/image
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `prompt` | string | Yes | The text description of the image to generate. |
-| `model` | string | No | The model to use for generation. Defaults to `nai-diffusion-3`. |
+| `model` | string | No | The model to use for generation. Defaults to `novelai/nai-diffusion-3`. |
 | `parameters` | object | No | Additional model-specific parameters for image generation. |
 
 The `parameters` object can include:
@@ -138,12 +138,12 @@ The `parameters` object can include:
 ### Example Request
 
 ```bash
-curl -X POST https://api.serika.dev/v1/generate/image \
+curl -X POST https://api.serika.dev/api/openai/v1/generate/image \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "A futuristic space station orbiting Earth",
-    "model": "nai-diffusion-3",
+    "model": "novelai/nai-diffusion-3",
     "parameters": {
       "size": "1024x1024",
       "negative_prompt": "blurry, pixelated, low resolution",
@@ -159,7 +159,7 @@ curl -X POST https://api.serika.dev/v1/generate/image \
 {
   "url": "https://api.serika.dev/api/cdn/images/4d5e6f7g8h9i0j1a2b3c_1677858242.png",
   "revised_prompt": "A futuristic space station orbiting Earth",
-  "model": "nai-diffusion-3",
+  "model": "novelai/nai-diffusion-3",
   "size": "1024x1024"
 }
 ```

@@ -54,14 +54,14 @@ Current pricing for the Serika.dev Customer API is as follows:
 
 ### Free Tier
 
-- Access to `gpt-3.5-turbo` and other basic models
+- Access to `euryale-70b` and other basic models
 - Limited to 200,000 tokens per month for text generation
 - Limited to 20 image generations per month
 - Rate limited to 20 requests per minute
 
 ### Paid Usage
 
-- Full access to all models, including premium models like `gpt-4`
+- Full access to all models, including premium models like `neversleep/llama-3.1-lumimaid-70b`
 - Text generation: $0.002 per 1K tokens (approximately $0.000002 per token)
 - Image generation: $0.02 per image
 - Higher rate limits (200 requests per minute)
@@ -72,8 +72,8 @@ Premium models (available only with billing set up) may have different pricing:
 
 | Model | Input Price (per 1K tokens) | Output Price (per 1K tokens) |
 |-------|----------------------------|------------------------------|
-| `gpt-3.5-turbo` | $0.0015 | $0.002 |
-| `gpt-4` | $0.03 | $0.06 |
+| `euryale-70b` | $0.0015 | $0.002 |
+| `neversleep/llama-3.1-lumimaid-70b` | $0.03 | $0.06 |
 | Other models | Varies | Varies |
 
 ## Payment and Billing Cycles

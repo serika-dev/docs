@@ -22,14 +22,14 @@ Before you begin, you'll need:
 Here's a simple example of generating text with the API:
 
 ```bash
-curl -X POST https://api.serika.dev/v1/chat/completions \
+curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [
       {"role": "user", "content": "Tell me a joke about programming"}
     ],
-    "model": "gpt-3.5-turbo"
+    "model": "euryale-70b"
   }'
 ```
 
@@ -48,7 +48,7 @@ All API responses are in JSON format. Here's an example of handling a response:
 
 ```javascript
 // Example: Handling a response in JavaScript
-fetch('https://api.serika.dev/v1/chat/completions', {
+fetch('https://api.serika.dev/api/openai/v1/chat/completions', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer sk-your-api-key',
@@ -58,7 +58,7 @@ fetch('https://api.serika.dev/v1/chat/completions', {
     messages: [
       {role: 'user', content: 'Hello, how are you?'}
     ],
-    model: 'gpt-3.5-turbo'
+    model: 'euryale-70b'
   })
 })
 .then(response => response.json())

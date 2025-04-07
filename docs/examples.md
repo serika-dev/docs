@@ -15,7 +15,7 @@ const apiKey = process.env.SERIKA_API_KEY;
 async function generateTextWithSerika() {
   try {
     const response = await axios.post(
-      'https://api.serika.dev/v1/chat/completions',
+      'https://api.serika.dev/api/openai/v1/chat/completions',
       {
         messages: [
           { role: 'user', content: 'Explain quantum computing in simple terms' }
@@ -55,7 +55,7 @@ api_key = os.environ.get("SERIKA_API_KEY")
 def generate_text_with_serika():
     try:
         response = requests.post(
-            "https://api.serika.dev/v1/chat/completions",
+            "https://api.serika.dev/api/openai/v1/chat/completions",
             headers={
                 "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json"
@@ -115,7 +115,7 @@ function generateTextWithSerika() {
     ];
     
     $context = stream_context_create($options);
-    $response = file_get_contents('https://api.serika.dev/v1/chat/completions', false, $context);
+    $response = file_get_contents('https://api.serika.dev/api/openai/v1/chat/completions', false, $context);
     
     if ($response === FALSE) {
         echo "Error making request";
@@ -147,7 +147,7 @@ const sleep = promisify(setTimeout);
 
 // Configuration - replace with your actual values
 const API_KEY = 'sk-your-api-key';
-const API_BASE_URL = 'https://api.serika.dev/v1';
+const API_BASE_URL = 'https://api.serika.dev/api/openai/v1';
 
 // Create directory for saving test outputs
 const OUTPUT_DIR = path.join(__dirname, 'api_outputs');
@@ -402,7 +402,7 @@ const apiKey = process.env.SERIKA_API_KEY;
 async function generateImageWithSerika() {
   try {
     const response = await axios.post(
-      'https://api.serika.dev/v1/images/generations',
+      'https://api.serika.dev/api/openai/v1/images/generations',
       {
         prompt: 'A beautiful mountain landscape with a lake at sunset',
         model: 'novelai/nai-diffusion-3',
@@ -449,7 +449,7 @@ api_key = os.environ.get("SERIKA_API_KEY")
 def generate_image_with_serika():
     try:
         response = requests.post(
-            "https://api.serika.dev/v1/images/generations",
+            "https://api.serika.dev/api/openai/v1/images/generations",
             headers={
                 "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json"
@@ -500,7 +500,7 @@ const apiKey = process.env.SERIKA_API_KEY;
 async function getCharacters() {
   try {
     const response = await axios.get(
-      'https://api.serika.dev/v1/characters',
+      'https://api.serika.dev/api/openai/v1/characters',
       {
         headers: {
           'Authorization': `Bearer ${apiKey}`
@@ -523,7 +523,7 @@ async function getCharacters() {
 async function generateWithCharacter(characterId) {
   try {
     const response = await axios.post(
-      'https://api.serika.dev/v1/chat/completions',
+      'https://api.serika.dev/api/openai/v1/chat/completions',
       {
         messages: [
           { role: 'user', content: 'Tell me about yourself' }
@@ -568,7 +568,7 @@ const apiKey = process.env.SERIKA_API_KEY;
 async function streamCompletionWithSerika() {
   try {
     const response = await axios.post(
-      'https://api.serika.dev/v1/chat/completions',
+      'https://api.serika.dev/api/openai/v1/chat/completions',
       {
         messages: [
           { role: 'user', content: 'Tell me a story about a dragon' }
@@ -640,7 +640,7 @@ api_key = os.environ.get("SERIKA_API_KEY")
 def stream_completion_with_serika():
     try:
         response = requests.post(
-            "https://api.serika.dev/v1/chat/completions",
+            "https://api.serika.dev/api/openai/v1/chat/completions",
             headers={
                 "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json",
@@ -699,7 +699,7 @@ async function handleApiErrors() {
   try {
     // Example: Missing required parameter
     const response = await axios.post(
-      'https://api.serika.dev/v1/chat/completions',
+      'https://api.serika.dev/api/openai/v1/chat/completions',
       {
         // Intentionally missing the 'messages' parameter
         model: 'euryale-70b'
@@ -777,7 +777,7 @@ def handle_api_errors():
     try:
         # Example: Missing required parameter
         response = requests.post(
-            "https://api.serika.dev/v1/chat/completions",
+            "https://api.serika.dev/api/openai/v1/chat/completions",
             headers={
                 "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json"

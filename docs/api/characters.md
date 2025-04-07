@@ -5,7 +5,7 @@ Serika.dev allows you to access and use its character database through the API. 
 ## List Characters
 
 ```
-GET /v1/characters
+GET /characters
 ```
 
 This endpoint returns a list of public characters available on Serika.dev.
@@ -17,7 +17,7 @@ This endpoint requires an API key with the `character_info` permission.
 ### Example Request
 
 ```bash
-curl -X GET https://api.serika.dev/v1/characters \
+curl -X GET https://api.serika.dev/api/openai/v1/characters \
   -H "Authorization: Bearer sk-your-api-key"
 ```
 
@@ -52,7 +52,7 @@ curl -X GET https://api.serika.dev/v1/characters \
 ## Get Character Details
 
 ```
-GET /v1/characters/:id
+GET /characters/:id
 ```
 
 This endpoint returns detailed information about a specific character.
@@ -70,7 +70,7 @@ This endpoint requires an API key with the `character_info` permission.
 ### Example Request
 
 ```bash
-curl -X GET https://api.serika.dev/v1/characters/12345-abcde \
+curl -X GET https://api.serika.dev/api/openai/v1/characters/12345-abcde \
   -H "Authorization: Bearer sk-your-api-key"
 ```
 
@@ -94,14 +94,14 @@ curl -X GET https://api.serika.dev/v1/characters/12345-abcde \
 To use a character in your chat completions or text generation requests, include the `character_id` parameter in your request:
 
 ```bash
-curl -X POST https://api.serika.dev/v1/chat/completions \
+curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [
       {"role": "user", "content": "I found a strange footprint in my garden. Can you help me identify it?"}
     ],
-    "model": "gpt-3.5-turbo",
+    "model": "euryale-70b",
     "character_id": "12345-abcde"
   }'
 ```
@@ -113,7 +113,7 @@ The response will be generated using the character's personality and background 
   "id": "chatcmpl-123abc",
   "object": "chat.completion",
   "created": 1677858242,
-  "model": "gpt-3.5-turbo",
+  "model": "euryale-70b",
   "choices": [
     {
       "index": 0,

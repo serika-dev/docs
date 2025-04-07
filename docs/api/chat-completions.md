@@ -5,7 +5,7 @@ The chat completions endpoint allows you to generate conversational AI responses
 ## Endpoint
 
 ```
-POST /v1/chat/completions
+POST /chat/completions
 ```
 
 ## Request Parameters
@@ -50,7 +50,7 @@ Free users are limited to the free tier models and a maximum of 200 tokens per r
 ### Basic Request
 
 ```bash
-curl -X POST https://api.serika.dev/v1/chat/completions \
+curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -64,7 +64,7 @@ curl -X POST https://api.serika.dev/v1/chat/completions \
 ### Conversation Request
 
 ```bash
-curl -X POST https://api.serika.dev/v1/chat/completions \
+curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -80,7 +80,7 @@ curl -X POST https://api.serika.dev/v1/chat/completions \
 ### Using a Character
 
 ```bash
-curl -X POST https://api.serika.dev/v1/chat/completions \
+curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -95,7 +95,7 @@ curl -X POST https://api.serika.dev/v1/chat/completions \
 ### Using a Custom System Prompt
 
 ```bash
-curl -X POST https://api.serika.dev/v1/chat/completions \
+curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -110,7 +110,7 @@ curl -X POST https://api.serika.dev/v1/chat/completions \
 ### Streaming Response
 
 ```bash
-curl -X POST https://api.serika.dev/v1/chat/completions \
+curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
