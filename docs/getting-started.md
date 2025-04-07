@@ -23,14 +23,14 @@ Here's a simple example of generating text with the API:
 
 ```bash
 curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
-  -H "Authorization: Bearer sk-your-api-key" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "messages": [
-      {"role": "user", "content": "Tell me a joke about programming"}
-    ],
-    "model": "euryale-70b"
-  }'
+-H "Authorization: sk-your-api-key" \
+-H "Content-Type: application/json" \
+-d '{
+  "messages": [
+    {"role": "user", "content": "Hello, how are you?"}
+  ],
+  "model": "euryale-70b"
+}'
 ```
 
 ## Step 3: Explore the API
@@ -48,10 +48,10 @@ All API responses are in JSON format. Here's an example of handling a response:
 
 ```javascript
 // Example: Handling a response in JavaScript
-fetch('https://api.serika.dev/api/openai/v1/chat/completions', {
+const response = await fetch('https://api.serika.dev/api/openai/v1/chat/completions', {
   method: 'POST',
   headers: {
-    'Authorization': 'Bearer sk-your-api-key',
+    'Authorization': 'sk-your-api-key',
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
@@ -60,13 +60,7 @@ fetch('https://api.serika.dev/api/openai/v1/chat/completions', {
     ],
     model: 'euryale-70b'
   })
-})
-.then(response => response.json())
-.then(data => {
-  // The AI's response is in data.choices[0].message.content
-  console.log(data.choices[0].message.content);
-})
-.catch(error => console.error('Error:', error));
+});
 ```
 
 ## Step 5: Monitor Usage

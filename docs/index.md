@@ -38,16 +38,15 @@ If you have any questions or need assistance, please contact us at support@serik
 
 ```bash
 # Example: Making a request with your API key
-curl -X POST \
-  https://api.serika.dev/api/openai/v1/chat/completions \
-  -H "Authorization: Bearer sk-your-api-key" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "messages": [
-      {"role": "user", "content": "Hello, how are you?"}
-    ],
-    "model": "euryale-70b"
-  }'
+curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
+-H "Authorization: sk-your-api-key" \
+-H "Content-Type: application/json" \
+-d '{
+  "messages": [
+    {"role": "user", "content": "Hello, how are you today?"}
+  ],
+  "model": "euryale-70b"
+}'
 ```
 
 Get started with the Serika.dev Customer API today! 
