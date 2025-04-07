@@ -32,7 +32,7 @@ POST /images/generations
 
 ```bash
 curl -X POST https://api.serika.dev/api/openai/v1/images/generations \
-  -H "Authorization: Bearer sk-your-api-key" \
+  -H "Authorization: sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "A majestic mountain landscape at sunset with a lake in the foreground",
@@ -46,7 +46,7 @@ curl -X POST https://api.serika.dev/api/openai/v1/images/generations \
 
 ```bash
 curl -X POST https://api.serika.dev/api/openai/v1/images/generations \
-  -H "Authorization: Bearer sk-your-api-key" \
+  -H "Authorization: sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "A cyberpunk cityscape with neon lights and flying cars",
@@ -80,7 +80,7 @@ To generate multiple images with the same prompt, use the `n` parameter:
 
 ```bash
 curl -X POST https://api.serika.dev/api/openai/v1/images/generations \
-  -H "Authorization: Bearer sk-your-api-key" \
+  -H "Authorization: sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "A cyberpunk cityscape with neon lights and flying cars",
@@ -139,7 +139,7 @@ The `parameters` object can include:
 
 ```bash
 curl -X POST https://api.serika.dev/api/openai/v1/generate/image \
-  -H "Authorization: Bearer sk-your-api-key" \
+  -H "Authorization: sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "A futuristic space station orbiting Earth",
@@ -168,11 +168,13 @@ curl -X POST https://api.serika.dev/api/openai/v1/generate/image \
 
 The following models are available for image generation:
 
-| Model ID | Name | Description | Tier |
-|----------|------|-------------|------|
-| `novelai/nai-diffusion-3` | NAI Diffusion 3 | NovelAI's latest image generation model | Free |
-| `novelai/nai-diffusion` | NAI Diffusion | NovelAI's stable diffusion model | Free |
-| `nai-diffusion-4-curated-preview` | NAI Diffusion 4 | NovelAI's latest image generation model | Premium |
+| Model ID | Name | Description | Tier | Generation Limit |
+|----------|------|-------------|------|-----------------|
+| `novelai/nai-diffusion-3` | NAI Diffusion 3 | NovelAI's latest image generation model | Free | 20/month |
+| `novelai/nai-diffusion` | NAI Diffusion | NovelAI's stable diffusion model | Free | 20/month |
+| `nai-diffusion-4-curated-preview` | NAI Diffusion 4 | NovelAI's latest image generation model | Premium | Unlimited (paid) |
+
+Free users are limited to 20 image generations per month, while premium users with billing setup can generate unlimited images (billed per image).
 
 ## Image Sizes
 

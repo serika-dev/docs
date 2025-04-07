@@ -54,27 +54,31 @@ Current pricing for the Serika.dev Customer API is as follows:
 
 ### Free Tier
 
-- Access to `euryale-70b` and other basic models
+- Access to `euryale-70b` and `mistral-7b` models
 - Limited to 200,000 tokens per month for text generation
 - Limited to 20 image generations per month
+- Maximum of 200 tokens per response
 - Rate limited to 20 requests per minute
 
-### Paid Usage
+### Premium Tier
 
-- Full access to all models, including premium models like `neversleep/llama-3.1-lumimaid-70b`
+- Full access to all models, including premium models like `claude-3-opus` and `mixtral-8x7b`
+- Increased token limits (up to 2000 tokens per response)
 - Text generation: $0.002 per 1K tokens (approximately $0.000002 per token)
 - Image generation: $0.02 per image
 - Higher rate limits (200 requests per minute)
 
-### Premium Models
+### Premium Models Pricing
 
-Premium models (available only with billing set up) may have different pricing:
+Premium models (available only with billing set up) have the following pricing:
 
 | Model | Input Price (per 1K tokens) | Output Price (per 1K tokens) |
 |-------|----------------------------|------------------------------|
-| `euryale-70b` | $0.0015 | $0.002 |
-| `neversleep/llama-3.1-lumimaid-70b` | $0.03 | $0.06 |
-| Other models | Varies | Varies |
+| `euryale-70b-premium` | $0.0015 | $0.002 |
+| `mixtral-8x7b` | $0.01 | $0.02 |
+| `gemma-7b` | $0.008 | $0.015 |
+| `claude-3-opus` | $0.03 | $0.06 |
+| `novelai/nai-diffusion-3` | - | $0.02 per image |
 
 ## Payment and Billing Cycles
 

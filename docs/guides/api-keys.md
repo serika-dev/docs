@@ -110,11 +110,11 @@ For detailed information about billing and usage, see the [Billing](billing.md) 
 
 ```bash
 curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
-  -H "Authorization: Bearer sk-your-api-key" \
+  -H "Authorization: sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [
-      {"role": "user", "content": "Hello, how are you?"}
+      {"role": "user", "content": "What is the capital of France?"}
     ],
     "model": "euryale-70b"
   }'
@@ -125,58 +125,50 @@ curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
 ```javascript
 const axios = require('axios');
 
-async function generateCompletion() {
+async function callAPI() {
   try {
     const response = await axios.post(
       'https://api.serika.dev/api/openai/v1/chat/completions',
       {
         messages: [
-          {role: 'user', content: 'Hello, how are you?'}
+          {role: 'user', content: 'What is the capital of France?'}
         ],
         model: 'euryale-70b'
       },
       {
         headers: {
-          'Authorization': `Bearer ${process.env.SERIKA_API_KEY}`,
+          'Authorization': 'sk-your-api-key',
           'Content-Type': 'application/json'
         }
       }
     );
     
-    console.log(response.data.choices[0].message.content);
+    console.log(response.data);
   } catch (error) {
     console.error('Error:', error.response ? error.response.data : error.message);
   }
 }
 
-generateCompletion();
+callAPI();
 ```
 
 ### Using API Keys with Python
 
 ```python
-import os
 import requests
 
-api_key = os.environ.get("SERIKA_API_KEY")
+url = "https://api.serika.dev/api/openai/v1/chat/completions"
+headers = {
+    "Authorization": "sk-your-api-key",
+    "Content-Type": "application/json"
+}
+data = {
+    "messages": [
+        {"role": "user", "content": "What is the capital of France?"}
+    ],
+    "model": "euryale-70b"
+}
 
-response = requests.post(
-    "https://api.serika.dev/api/openai/v1/chat/completions",
-    headers={
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json"
-    },
-    json={
-        "messages": [
-            {"role": "user", "content": "Hello, how are you?"}
-        ],
-        "model": "euryale-70b"
-    }
-)
-
-if response.status_code == 200:
-    print(response.json()["choices"][0]["message"]["content"])
-else:
-    print(f"Error: {response.status_code}")
-    print(response.text)
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
 ``` 

@@ -21,23 +21,39 @@ sk-abcdefghijklmnopqrstuvwxyz123456789
 
 ## Using Your API Key
 
-To authenticate your API requests, include your API key in one of the following header formats:
-
-```
-Authorization: Bearer sk-your-api-key
-```
-
-Or alternatively:
+To authenticate your API requests, include your API key in the `x-api-key` header:
 
 ```
 x-api-key: sk-your-api-key
 ```
 
+The standard OpenAI-compatible authentication method is also supported:
+
+```
+Authorization: sk-your-api-key
+```
+
+Note that unlike with OpenAI, you should NOT use the "Bearer" prefix with the Authorization header.
+
 ### Example Request with Authentication
 
 ```bash
 curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
-  -H "Authorization: Bearer sk-your-api-key" \
+  -H "Authorization: sk-your-api-key" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "messages": [
+      {"role": "user", "content": "Hello, how are you?"}
+    ],
+    "model": "euryale-70b"
+  }'
+```
+
+Alternative using the x-api-key header:
+
+```bash
+curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
+  -H "x-api-key: sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [

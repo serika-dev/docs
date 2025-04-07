@@ -24,7 +24,7 @@ async function generateTextWithSerika() {
       },
       {
         headers: {
-          'Authorization': `Bearer ${apiKey}`,
+          'Authorization': 'sk-your-api-key',
           'Content-Type': 'application/json'
         }
       }
@@ -57,7 +57,7 @@ def generate_text_with_serika():
         response = requests.post(
             "https://api.serika.dev/api/openai/v1/chat/completions",
             headers={
-                "Authorization": f"Bearer {api_key}",
+                "Authorization": f"sk-your-api-key",
                 "Content-Type": "application/json"
             },
             json={
@@ -107,7 +107,7 @@ function generateTextWithSerika() {
         'http' => [
             'method' => 'POST',
             'header' => [
-                'Authorization: Bearer ' . $apiKey,
+                'Authorization: ' . $apiKey,
                 'Content-Type: application/json'
             ],
             'content' => json_encode($data)
@@ -162,7 +162,7 @@ async function makeApiRequest(endpoint, method = 'GET', data = null) {
       url: `${API_BASE_URL}${endpoint}`,
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`
+        'Authorization': 'sk-your-api-key'
       }
     };
     
@@ -410,7 +410,7 @@ async function generateImageWithSerika() {
       },
       {
         headers: {
-          'Authorization': `Bearer ${apiKey}`,
+          'Authorization': `${apiKey}`,
           'Content-Type': 'application/json'
         }
       }
@@ -451,7 +451,7 @@ def generate_image_with_serika():
         response = requests.post(
             "https://api.serika.dev/api/openai/v1/images/generations",
             headers={
-                "Authorization": f"Bearer {api_key}",
+                "Authorization": f"sk-your-api-key",
                 "Content-Type": "application/json"
             },
             json={
@@ -503,7 +503,7 @@ async function getCharacters() {
       'https://api.serika.dev/api/openai/v1/characters',
       {
         headers: {
-          'Authorization': `Bearer ${apiKey}`
+          'Authorization': `${apiKey}`
         }
       }
     );
@@ -533,7 +533,7 @@ async function generateWithCharacter(characterId) {
       },
       {
         headers: {
-          'Authorization': `Bearer ${apiKey}`,
+          'Authorization': `${apiKey}`,
           'Content-Type': 'application/json'
         }
       }
@@ -578,7 +578,7 @@ async function streamCompletionWithSerika() {
       },
       {
         headers: {
-          'Authorization': `Bearer ${apiKey}`,
+          'Authorization': `${apiKey}`,
           'Content-Type': 'application/json'
         },
         responseType: 'stream'
@@ -642,7 +642,7 @@ def stream_completion_with_serika():
         response = requests.post(
             "https://api.serika.dev/api/openai/v1/chat/completions",
             headers={
-                "Authorization": f"Bearer {api_key}",
+                "Authorization": f"sk-your-api-key",
                 "Content-Type": "application/json",
                 "Accept": "text/event-stream"
             },
@@ -706,7 +706,7 @@ async function handleApiErrors() {
       },
       {
         headers: {
-          'Authorization': `Bearer ${apiKey}`,
+          'Authorization': `${apiKey}`,
           'Content-Type': 'application/json'
         }
       }
@@ -779,7 +779,7 @@ def handle_api_errors():
         response = requests.post(
             "https://api.serika.dev/api/openai/v1/chat/completions",
             headers={
-                "Authorization": f"Bearer {api_key}",
+                "Authorization": f"sk-your-api-key",
                 "Content-Type": "application/json"
             },
             json={

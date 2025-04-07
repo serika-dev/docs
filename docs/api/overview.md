@@ -46,7 +46,7 @@ https://api.serika.dev/api/openai/v1
 All API requests require an API key for authentication. Include your API key in the `Authorization` header of your requests:
 
 ```
-Authorization: Bearer sk-your-api-key
+Authorization: sk-your-api-key
 ```
 
 You can also use the `x-api-key` header:
@@ -61,31 +61,24 @@ x-api-key: sk-your-api-key
 
 | Model ID | Name | Description |
 |----------|------|-------------|
-| `euryale-70b` | Euryale 70B | Primary model for free users - high quality roleplay model |
-| `deepseek-chat` | DeepSeek Chat | Backup model for free users - high quality roleplay model |
-| `llama-3.2-11b-instruct` | Llama 3.2 11B | Backup model for free users - high quality general purpose model |
-| `cognitivecomputations/dolphin3.0-mistral-24b:free` | Dolphin 24B | General purpose model for free users |
-| `rogue-rose-103b-v0.2` | Rogue Rose 103B | Japanese model for free users - high quality roleplay model |
-| `llama-4-scout-17b-instruct` | Llama 4 Scout (Zukijourney) | High quality general purpose model |
-| `gemini-2.0-flash` | Gemini 2.0 Flash | Fallback model - high quality general purpose model |
+| `euryale-70b` | Euryale 70B | Default model for free users. Maximum 200 tokens per response. |
+| `mistral-7b` | Mistral 7B | Lighter model with good performance. Maximum 200 tokens per response. |
 
 ### Premium Tier Models
 
 | Model ID | Name | Description |
 |----------|------|-------------|
-| `neversleep/llama-3.1-lumimaid-70b` | Lumimaid 70B | Premium model with enhanced roleplay capabilities |
-| `sao10k/l3.1-70b-hanami-x1` | Hanami X1 | Backup model for premium users - high quality roleplay model |
-| `meta-llama/llama-4-scout` | Llama 4 Scout (openrouter) | High quality general purpose model |
-| `meta-llama/llama-4-maverick` | Llama 4 Maverick | High quality general purpose model |
-| `sao10k/l3.3-euryale-70b` | Euryale 70B (L3.3) | Backup model for premium users - high quality roleplay model |
+| `euryale-70b-premium` | Euryale 70B Premium | Enhanced version with higher token limit. Maximum 2000 tokens per response. |
+| `gemma-7b` | Gemma 7B | Google's advanced lightweight model. Maximum 2000 tokens per response. |
+| `mixtral-8x7b` | Mixtral 8x7B | Powerful model with strong reasoning capabilities. Maximum 2000 tokens per response. |
+| `claude-3-opus` | Claude 3 Opus | Anthropic's most capable model. Maximum 2000 tokens per response. |
 
 ### Image Generation Models
 
 | Model ID | Name | Description | Tier |
 |----------|------|-------------|------|
-| `novelai/nai-diffusion-3` | NAI Diffusion 3 | NovelAI's latest image generation model | Free |
-| `novelai/nai-diffusion` | NAI Diffusion | NovelAI's stable diffusion model | Free |
-| `nai-diffusion-4-curated-preview` | NAI Diffusion 4 | NovelAI's latest image generation model | Premium |
+| `novelai/nai-diffusion-3` | NAI Diffusion 3 | NovelAI's latest image generation model | Free & Premium |
+| `novelai/nai-diffusion` | NAI Diffusion | NovelAI's stable diffusion model | Free & Premium |
 
 ## Response Format
 

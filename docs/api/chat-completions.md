@@ -18,30 +18,31 @@ POST /chat/completions
 | `character_id` | string | No | ID of a character to use for generation. The character's personality will influence the response. |
 | `temperature` | number | No | Controls randomness of the output. Higher values (e.g., 0.8) make output more random, lower values (e.g., 0.2) make it more deterministic. Defaults to 0.7. |
 | `system_prompt` | string | No | Custom system prompt to override or complement the default or character-based system prompt. |
+| `max_tokens` | integer | No | Maximum number of tokens to generate. Free tier is limited to 200 tokens, premium users can use up to 2000 tokens. |
 
 ## Available Models
 
 ### Free Tier Models
 
-| Model ID | Name | Description |
-|----------|------|-------------|
-| `euryale-70b` | Euryale 70B | Primary model for free users - high quality roleplay model |
-| `deepseek-chat` | DeepSeek Chat | Backup model for free users - high quality roleplay model |
-| `llama-3.2-11b-instruct` | Llama 3.2 11B | Backup model for free users - high quality general purpose model |
-| `cognitivecomputations/dolphin3.0-mistral-24b:free` | Dolphin 24B | General purpose model for free users |
-| `rogue-rose-103b-v0.2` | Rogue Rose 103B | Japanese model for free users - high quality roleplay model |
-| `llama-4-scout-17b-instruct` | Llama 4 Scout (Zukijourney) | High quality general purpose model |
-| `gemini-2.0-flash` | Gemini 2.0 Flash | Fallback model - high quality general purpose model |
+| Model ID | Name | Description | Max Tokens |
+|----------|------|-------------|------------|
+| `euryale-70b` | Euryale 70B | Primary model for free users - high quality roleplay model | 200 |
+| `deepseek-chat` | DeepSeek Chat | Backup model for free users - high quality roleplay model | 200 |
+| `llama-3.2-11b-instruct` | Llama 3.2 11B | Backup model for free users - high quality general purpose model | 200 |
+| `cognitivecomputations/dolphin3.0-mistral-24b:free` | Dolphin 24B | General purpose model for free users | 200 |
+| `rogue-rose-103b-v0.2` | Rogue Rose 103B | Japanese model for free users - high quality roleplay model | 200 |
+| `llama-4-scout-17b-instruct` | Llama 4 Scout (Zukijourney) | High quality general purpose model | 200 |
+| `gemini-2.0-flash` | Gemini 2.0 Flash | Fallback model - high quality general purpose model | 200 |
 
 ### Premium Tier Models (Requires Billing Setup)
 
-| Model ID | Name | Description |
-|----------|------|-------------|
-| `neversleep/llama-3.1-lumimaid-70b` | Lumimaid 70B | Premium model with enhanced roleplay capabilities |
-| `sao10k/l3.1-70b-hanami-x1` | Hanami X1 | Backup model for premium users - high quality roleplay model |
-| `meta-llama/llama-4-scout` | Llama 4 Scout (openrouter) | High quality general purpose model |
-| `meta-llama/llama-4-maverick` | Llama 4 Maverick | High quality general purpose model |
-| `sao10k/l3.3-euryale-70b` | Euryale 70B (L3.3) | Backup model for premium users - high quality roleplay model |
+| Model ID | Name | Description | Max Tokens |
+|----------|------|-------------|------------|
+| `neversleep/llama-3.1-lumimaid-70b` | Lumimaid 70B | Premium model with enhanced roleplay capabilities | 2000 |
+| `sao10k/l3.1-70b-hanami-x1` | Hanami X1 | Backup model for premium users - high quality roleplay model | 2000 |
+| `meta-llama/llama-4-scout` | Llama 4 Scout (openrouter) | High quality general purpose model | 2000 |
+| `meta-llama/llama-4-maverick` | Llama 4 Maverick | High quality general purpose model | 2000 |
+| `sao10k/l3.3-euryale-70b` | Euryale 70B (L3.3) | Backup model for premium users - high quality roleplay model | 2000 |
 
 Free users are limited to the free tier models and a maximum of 200 tokens per response. Premium users (with billing setup) can access all models with up to 2000 tokens per response.
 
@@ -51,7 +52,7 @@ Free users are limited to the free tier models and a maximum of 200 tokens per r
 
 ```bash
 curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
-  -H "Authorization: Bearer sk-your-api-key" \
+  -H "Authorization: sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [
@@ -65,7 +66,7 @@ curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
 
 ```bash
 curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
-  -H "Authorization: Bearer sk-your-api-key" \
+  -H "Authorization: sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [
@@ -81,7 +82,7 @@ curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
 
 ```bash
 curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
-  -H "Authorization: Bearer sk-your-api-key" \
+  -H "Authorization: sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [
@@ -96,7 +97,7 @@ curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
 
 ```bash
 curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
-  -H "Authorization: Bearer sk-your-api-key" \
+  -H "Authorization: sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [
@@ -111,7 +112,7 @@ curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
 
 ```bash
 curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
-  -H "Authorization: Bearer sk-your-api-key" \
+  -H "Authorization: sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [

@@ -18,7 +18,7 @@ This endpoint requires an API key with the `character_info` permission.
 
 ```bash
 curl -X GET https://api.serika.dev/api/openai/v1/characters \
-  -H "Authorization: Bearer sk-your-api-key"
+  -H "Authorization: sk-your-api-key"
 ```
 
 ### Response Format
@@ -71,7 +71,7 @@ This endpoint requires an API key with the `character_info` permission.
 
 ```bash
 curl -X GET https://api.serika.dev/api/openai/v1/characters/12345-abcde \
-  -H "Authorization: Bearer sk-your-api-key"
+  -H "Authorization: sk-your-api-key"
 ```
 
 ### Response Format
@@ -95,7 +95,7 @@ To use a character in your chat completions or text generation requests, include
 
 ```bash
 curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
-  -H "Authorization: Bearer sk-your-api-key" \
+  -H "Authorization: sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [

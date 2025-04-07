@@ -206,7 +206,10 @@ async function optimizedRequest() {
       }
     ],
     model: 'euryale-70b',
-    max_tokens: 100 // Limit response length
+    max_tokens: 100, // Limit response length
+    headers: {
+      'Authorization': 'sk-your-api-key'
+    }
   });
 }
 ```
