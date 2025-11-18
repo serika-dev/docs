@@ -6,8 +6,18 @@ Serika.dev uses API keys to authenticate requests. You can view and manage your 
 
 Your API key should be included in the `Authorization` header of your HTTP requests.
 
-```{tab-set}
-```{tab-item} Python
+````` {tab-set}
+```` {tab-item} Python (Install)
+```bash
+pip install openai
+```
+````
+```` {tab-item} Node.js (Install)
+```bash
+npm install openai
+```
+````
+```` {tab-item} Python
 ```python
 from openai import OpenAI
 
@@ -16,8 +26,8 @@ client = OpenAI(
     api_key="sk-your-api-key"
 )
 ```
-```
-```{tab-item} JavaScript
+````
+```` {tab-item} JavaScript
 ```javascript
 import OpenAI from 'openai';
 

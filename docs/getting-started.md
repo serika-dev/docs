@@ -13,78 +13,79 @@ First, you need an API key.
 
 Serika.dev is compatible with the standard OpenAI client libraries, making integration effortless.
 
-```{tab-set}
-```{tab-item} Python
+````` {tab-set}
+```` {tab-item} Python
 ```bash
 pip install openai
 ```
-```
-```{tab-item} Node.js
+````
+```` {tab-item} Node.js
 ```bash
 npm install openai
 ```
-```
-```
+````
+`````
 
 ## 3. Make Your First Request
 
 Create a file named `test_api.py` (or `test_api.js`) and add the following code.
 
-```{tab-set}
-```{tab-item} Python
+````` {tab-set}
+```` {tab-item} Python
 ```python
 from openai import OpenAI
 
 # Initialize the client with Serika's base URL
 client = OpenAI(
     base_url="https://api.serika.dev/api/openai/v1",
-    api_key="YOUR_API_KEY_HERE"
+    api_key="your_api_key"
 )
 
 # Create a chat completion
 response = client.chat.completions.create(
     model="openai/gpt-4o-mini",
     messages=[
-        {"role": "user", "content": "Hello, world!"}
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "What is the capital of France?"}
     ]
 )
 
 print(response.choices[0].message.content)
 ```
-```
-```{tab-item} JavaScript
+````
+```` {tab-item} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
 const client = new OpenAI({
   baseURL: 'https://api.serika.dev/api/openai/v1',
-  apiKey: 'YOUR_API_KEY_HERE',
+  apiKey: 'your_api_key',
 });
 
 async function main() {
-  const completion = await client.chat.completions.create({
-    messages: [{ role: 'user', content: 'Hello, world!' }],
+  const chatCompletion = await client.chat.completions.create({
+    messages: [{ role: 'user', content: 'What is the capital of France?' }],
     model: 'openai/gpt-4o-mini',
   });
 
-  console.log(completion.choices[0].message.content);
+  console.log(chatCompletion.choices[0].message.content);
 }
 
 main();
 ```
-```
-```{tab-item} cURL
+````
+```` {tab-item} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_API_KEY_HERE" \
+  -H "Authorization: Bearer your_api_key" \
   -d '{
     "model": "openai/gpt-4o-mini",
-    "messages": [{"role": "user", "content": "Hello, world!"}]
+    "messages": [{"role": "user", "content": "What is the capital of France?"}]
   }'
 ```
-```
-```
+````
+`````
 
 ## Next Steps
 

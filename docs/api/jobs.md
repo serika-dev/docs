@@ -129,8 +129,8 @@ async function runJob() {
 
 runJob();
 ```
-```
-```{tab-item} cURL
+````
+```` {tab-item} cURL
 ```bash
 # 1. Submit Job
 curl -X POST https://api.serika.dev/api/openai/v1/jobs/images \
@@ -147,8 +147,8 @@ curl -X POST https://api.serika.dev/api/openai/v1/jobs/images \
 curl -X GET https://api.serika.dev/api/openai/v1/jobs/job-12345... \
   -H "Authorization: Bearer sk-your-api-key"
 ```
-```
-```
+````
+`````
 
 ---
 

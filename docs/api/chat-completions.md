@@ -10,8 +10,8 @@ The Chat Completions endpoint is the core of the Serika.dev API, allowing you to
 
 The easiest way to use the API is with the official OpenAI client libraries.
 
-```{tab-set}
-```{tab-item} Python
+````` {tab-set}
+```` {tab-item} Python
 ```python
 from openai import OpenAI
 
@@ -24,14 +24,14 @@ response = client.chat.completions.create(
     model="openai/gpt-4o-mini",
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Hello!"}
+        {"role": "user", "content": "What is the capital of France?"}
     ]
 )
 
 print(response.choices[0].message.content)
 ```
-```
-```{tab-item} JavaScript
+````
+```` {tab-item} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -41,29 +41,29 @@ const client = new OpenAI({
 });
 
 async function main() {
-  const completion = await client.chat.completions.create({
-    messages: [{ role: 'user', content: 'Hello!' }],
+  const chatCompletion = await client.chat.completions.create({
+    messages: [{ role: 'user', content: 'What is the capital of France?' }],
     model: 'openai/gpt-4o-mini',
   });
 
-  console.log(completion.choices[0].message.content);
+  console.log(chatCompletion.choices[0].message.content);
 }
 
 main();
 ```
-```
-```{tab-item} cURL
+````
+```` {tab-item} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer your_api_key" \
   -d '{
     "model": "openai/gpt-4o-mini",
-    "messages": [{"role": "user", "content": "Hello!"}]
+    "messages": [{"role": "user", "content": "What is the capital of France?"}]
   }'
 ```
-```
-```
+````
+`````
 
 ## Request Parameters
 

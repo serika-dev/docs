@@ -74,7 +74,7 @@ from openai import OpenAI
 
 client = OpenAI(
     base_url="https://api.serika.dev/api/openai/v1",
-    api_key="sk-your-api-key"
+    api_key=os.environ.get("SERIKA_API_KEY"),
 )
 
 response = client.chat.completions.create(
@@ -83,14 +83,14 @@ response = client.chat.completions.create(
 )
 print(response.choices[0].message.content)
 ```
-```
-```{tab-item} JavaScript
+````
+```` {tab-item} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
 const client = new OpenAI({
   baseURL: 'https://api.serika.dev/api/openai/v1',
-  apiKey: 'sk-your-api-key',
+  apiKey: process.env.SERIKA_API_KEY,
 });
 
 async function main() {

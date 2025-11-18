@@ -11,8 +11,8 @@ Serika.dev provides a powerful Image Generation API compatible with the OpenAI s
 
 ## Quick Start
 
-```{tab-set}
-```{tab-item} Python
+````` {tab-set}
+```` {tab-item} Python
 ```python
 from openai import OpenAI
 
@@ -23,15 +23,17 @@ client = OpenAI(
 
 response = client.images.generate(
     model="novelai/nai-diffusion-3",
-    prompt="A cyberpunk city at night, neon lights, high detail",
+    prompt="A cute anime girl with pink hair, high quality",
     size="1024x1024",
-    n=1
+    quality="standard",
+    n=1,
 )
 
-print(response.data[0].url)
+image_url = response.data[0].url
+print(f"Image URL: {image_url}")
 ```
-```
-```{tab-item} JavaScript
+````
+```` {tab-item} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -43,7 +45,7 @@ const client = new OpenAI({
 async function main() {
   const response = await client.images.generate({
     model: "novelai/nai-diffusion-3",
-    prompt: "A cyberpunk city at night, neon lights, high detail",
+    prompt: "A cute anime girl with pink hair, high quality",
     n: 1,
     size: "1024x1024",
   });
@@ -53,20 +55,21 @@ async function main() {
 
 main();
 ```
-```
-```{tab-item} cURL
+````
+```` {tab-item} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/images/generations \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer your_api_key" \
   -d '{
     "model": "novelai/nai-diffusion-3",
-    "prompt": "A cyberpunk city at night, neon lights, high detail",
-    "size": "1024x1024"
+    "prompt": "A cute anime girl with pink hair, high quality",
+    "size": "1024x1024",
+    "n": 1
   }'
 ```
-```
-```
+````
+`````
 
 ## Available Models
 
