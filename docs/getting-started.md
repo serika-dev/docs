@@ -13,13 +13,13 @@ First, you need an API key.
 
 Serika.dev is compatible with the standard OpenAI client libraries, making integration effortless.
 
-````` {tab-set}
-```` {tab-item} Python
+````` {tabs}
+```` {group-tab} Python
 ```bash
 pip install openai
 ```
 ````
-```` {tab-item} Node.js
+```` {group-tab} Node.js
 ```bash
 npm install openai
 ```
@@ -30,8 +30,8 @@ npm install openai
 
 Create a file named `test_api.py` (or `test_api.js`) and add the following code.
 
-````` {tab-set}
-```` {tab-item} Python
+````` {tabs}
+```` {group-tab} Python
 ```python
 from openai import OpenAI
 
@@ -53,7 +53,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 ````
-```` {tab-item} JavaScript
+```` {group-tab} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -74,7 +74,7 @@ async function main() {
 main();
 ```
 ````
-```` {tab-item} cURL
+```` {group-tab} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Content-Type: application/json" \

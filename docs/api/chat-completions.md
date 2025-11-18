@@ -10,8 +10,8 @@ The Chat Completions endpoint is the core of the Serika.dev API, allowing you to
 
 The easiest way to use the API is with the official OpenAI client libraries.
 
-````` {tab-set}
-```` {tab-item} Python
+````` {tabs}
+```` {group-tab} Python
 ```python
 from openai import OpenAI
 
@@ -31,7 +31,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 ````
-```` {tab-item} JavaScript
+```` {group-tab} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -52,7 +52,7 @@ async function main() {
 main();
 ```
 ````
-```` {tab-item} cURL
+```` {group-tab} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Content-Type: application/json" \

@@ -11,8 +11,8 @@ Serika.dev provides a powerful Image Generation API compatible with the OpenAI s
 
 ## Quick Start
 
-````` {tab-set}
-```` {tab-item} Python
+````` {tabs}
+```` {group-tab} Python
 ```python
 from openai import OpenAI
 
@@ -33,7 +33,7 @@ image_url = response.data[0].url
 print(f"Image URL: {image_url}")
 ```
 ````
-```` {tab-item} JavaScript
+```` {group-tab} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -56,7 +56,7 @@ async function main() {
 main();
 ```
 ````
-```` {tab-item} cURL
+```` {group-tab} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/images/generations \
   -H "Content-Type: application/json" \

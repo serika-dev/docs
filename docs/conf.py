@@ -11,11 +11,10 @@ author = 'Serika.dev'
 
 # -- General configuration ---------------------------------------------------
 
-extensions = [
     'myst_parser',
     'sphinx_rtd_theme',
 
-    'sphinx_design',
+    'sphinx_tabs.tabs',
     'sphinx_copybutton',
 ]
 

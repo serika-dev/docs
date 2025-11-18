@@ -33,8 +33,8 @@ Submit a new image generation job. This is required for models that are marked a
 
 ### Example Request
 
-```{tab-set}
-```{tab-item} Python
+```{tabs}
+```{group-tab} Python
 ```python
 import requests
 import time
@@ -79,7 +79,7 @@ while True:
     time.sleep(2) # Wait 2 seconds before checking again
 ```
 ```
-```{tab-item} JavaScript
+```{group-tab} JavaScript
 ```javascript
 const axios = require('axios');
 
@@ -130,7 +130,7 @@ async function runJob() {
 runJob();
 ```
 ````
-```` {tab-item} cURL
+```` {group-tab} cURL
 ```bash
 # 1. Submit Job
 curl -X POST https://api.serika.dev/api/openai/v1/jobs/images \

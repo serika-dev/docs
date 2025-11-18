@@ -6,13 +6,13 @@ This page provides practical examples for using the Serika.dev API with the offi
 
 Ensure you have the OpenAI library installed:
 
-````` {tab-set}
-```` {tab-item} Python
+````` {tabs}
+```` {group-tab} Python
 ```bash
 pip install openai
 ```
 ````
-```` {tab-item} Node.js
+```` {group-tab} Node.js
 ```bash
 npm install openai
 ```
@@ -23,8 +23,8 @@ npm install openai
 
 ### Basic Chat
 
-````` {tab-set}
-```` {tab-item} Python
+````` {tabs}
+```` {group-tab} Python
 ```python
 from openai import OpenAI
 
@@ -44,7 +44,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 ````
-```` {tab-item} JavaScript
+```` {group-tab} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -65,7 +65,7 @@ async function main() {
 main();
 ```
 ````
-```` {tab-item} cURL
+```` {group-tab} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Content-Type: application/json" \
@@ -80,8 +80,8 @@ curl https://api.serika.dev/api/openai/v1/chat/completions \
 
 ### Streaming Responses
 
-````` {tab-set}
-```` {tab-item} Python
+````` {tabs}
+```` {group-tab} Python
 ```python
 from openai import OpenAI
 
@@ -101,7 +101,7 @@ for chunk in stream:
         print(chunk.choices[0].delta.content, end="")
 ```
 ````
-```` {tab-item} JavaScript
+```` {group-tab} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -125,7 +125,7 @@ async function main() {
 main();
 ```
 ````
-```` {tab-item} cURL
+```` {group-tab} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Content-Type: application/json" \
@@ -143,8 +143,8 @@ curl https://api.serika.dev/api/openai/v1/chat/completions \
 
 ### Generate an Image
 
-````` {tab-set}
-```` {tab-item} Python
+````` {tabs}
+```` {group-tab} Python
 ```python
 from openai import OpenAI
 
@@ -165,7 +165,7 @@ image_url = response.data[0].url
 print(f"Image URL: {image_url}")
 ```
 ````
-```` {tab-item} JavaScript
+```` {group-tab} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -188,7 +188,7 @@ async function main() {
 main();
 ```
 ````
-```` {tab-item} cURL
+```` {group-tab} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/images/generations \
   -H "Content-Type: application/json" \
@@ -209,8 +209,8 @@ curl https://api.serika.dev/api/openai/v1/images/generations \
 
 You can influence the AI's personality by passing a `character_id` in the `extra_body` parameter (Python) or directly in the options (Node.js, if typed loosely, otherwise via custom request).
 
-````` {tab-set}
-```` {tab-item} Python
+````` {tabs}
+```` {group-tab} Python
 ```python
 response = client.chat.completions.create(
     model="sao10k/l3.3-euryale-70b",
@@ -221,7 +221,7 @@ response = client.chat.completions.create(
 )
 ```
 ````
-```` {tab-item} JavaScript
+```` {group-tab} JavaScript
 ```javascript
 const response = await client.chat.completions.create({
   model: 'sao10k/l3.3-euryale-70b',
