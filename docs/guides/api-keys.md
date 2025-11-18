@@ -84,7 +84,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 ````
-```` {group-tab} JavaScript
+````{group-tab} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -103,7 +103,7 @@ async function main() {
 main();
 ```
 ````
-```` {group-tab} cURL
+````{group-tab} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key" \
