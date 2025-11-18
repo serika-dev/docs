@@ -6,10 +6,8 @@ Serika.dev uses API keys to authenticate requests. You can view and manage your 
 
 Your API key should be included in the `Authorization` header of your HTTP requests.
 
-<div class="tabbed-set" data-tabs="1:3">
-<input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
-<label for="__tabbed_1_1">Python</label>
-<div class="tabbed-content">
+```{tab-set}
+```{tab-item} Python
 ```python
 from openai import OpenAI
 
@@ -18,10 +16,8 @@ client = OpenAI(
     api_key="sk-your-api-key"
 )
 ```
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio">
-<label for="__tabbed_1_2">JavaScript</label>
-<div class="tabbed-content">
+```
+```{tab-item} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -30,16 +26,14 @@ const client = new OpenAI({
   apiKey: 'sk-your-api-key',
 });
 ```
-</div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio">
-<label for="__tabbed_1_3">cURL</label>
-<div class="tabbed-content">
+```
+```{tab-item} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/models \
   -H "Authorization: Bearer sk-your-api-key"
 ```
-</div>
-</div>
+```
+```
 
 ## Security Best Practices
 

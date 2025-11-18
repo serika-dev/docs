@@ -13,31 +13,25 @@ First, you need an API key.
 
 Serika.dev is compatible with the standard OpenAI client libraries, making integration effortless.
 
-<div class="tabbed-set" data-tabs="1:2">
-<input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
-<label for="__tabbed_1_1">Python</label>
-<div class="tabbed-content">
+```{tab-set}
+```{tab-item} Python
 ```bash
 pip install openai
 ```
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio">
-<label for="__tabbed_1_2">Node.js</label>
-<div class="tabbed-content">
+```
+```{tab-item} Node.js
 ```bash
 npm install openai
 ```
-</div>
-</div>
+```
+```
 
 ## 3. Make Your First Request
 
 Create a file named `test_api.py` (or `test_api.js`) and add the following code.
 
-<div class="tabbed-set" data-tabs="2:3">
-<input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio">
-<label for="__tabbed_2_1">Python</label>
-<div class="tabbed-content">
+```{tab-set}
+```{tab-item} Python
 ```python
 from openai import OpenAI
 
@@ -57,10 +51,8 @@ response = client.chat.completions.create(
 
 print(response.choices[0].message.content)
 ```
-</div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio">
-<label for="__tabbed_2_2">JavaScript</label>
-<div class="tabbed-content">
+```
+```{tab-item} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -80,10 +72,8 @@ async function main() {
 
 main();
 ```
-</div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio">
-<label for="__tabbed_2_3">cURL</label>
-<div class="tabbed-content">
+```
+```{tab-item} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Content-Type: application/json" \
@@ -93,8 +83,8 @@ curl https://api.serika.dev/api/openai/v1/chat/completions \
     "messages": [{"role": "user", "content": "Hello, world!"}]
   }'
 ```
-</div>
-</div>
+```
+```
 
 ## Next Steps
 

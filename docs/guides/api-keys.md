@@ -67,10 +67,8 @@ To permanently remove access:
 
 Here is how to use your API key with different languages.
 
-<div class="tabbed-set" data-tabs="1:3">
-<input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
-<label for="__tabbed_1_1">Python</label>
-<div class="tabbed-content">
+```{tab-set}
+```{tab-item} Python
 ```python
 from openai import OpenAI
 
@@ -85,10 +83,8 @@ response = client.chat.completions.create(
 )
 print(response.choices[0].message.content)
 ```
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio">
-<label for="__tabbed_1_2">JavaScript</label>
-<div class="tabbed-content">
+```
+```{tab-item} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -106,10 +102,8 @@ async function main() {
 }
 main();
 ```
-</div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio">
-<label for="__tabbed_1_3">cURL</label>
-<div class="tabbed-content">
+```
+```{tab-item} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key" \
@@ -119,5 +113,5 @@ curl https://api.serika.dev/api/openai/v1/chat/completions \
     "messages": [{"role": "user", "content": "Hello!"}]
   }'
 ```
-</div>
-</div>
+```
+```

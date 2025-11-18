@@ -11,10 +11,8 @@ Serika.dev provides a powerful Image Generation API compatible with the OpenAI s
 
 ## Quick Start
 
-<div class="tabbed-set" data-tabs="1:3">
-<input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
-<label for="__tabbed_1_1">Python</label>
-<div class="tabbed-content">
+```{tab-set}
+```{tab-item} Python
 ```python
 from openai import OpenAI
 
@@ -32,10 +30,8 @@ response = client.images.generate(
 
 print(response.data[0].url)
 ```
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio">
-<label for="__tabbed_1_2">JavaScript</label>
-<div class="tabbed-content">
+```
+```{tab-item} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -57,10 +53,8 @@ async function main() {
 
 main();
 ```
-</div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio">
-<label for="__tabbed_1_3">cURL</label>
-<div class="tabbed-content">
+```
+```{tab-item} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/images/generations \
   -H "Content-Type: application/json" \
@@ -71,8 +65,8 @@ curl https://api.serika.dev/api/openai/v1/images/generations \
     "size": "1024x1024"
   }'
 ```
-</div>
-</div>
+```
+```
 
 ## Available Models
 

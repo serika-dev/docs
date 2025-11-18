@@ -6,31 +6,25 @@ This page provides practical examples for using the Serika.dev API with the offi
 
 Ensure you have the OpenAI library installed:
 
-<div class="tabbed-set" data-tabs="1:2">
-<input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
-<label for="__tabbed_1_1">Python</label>
-<div class="tabbed-content">
+```{tab-set}
+```{tab-item} Python
 ```bash
 pip install openai
 ```
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio">
-<label for="__tabbed_1_2">Node.js</label>
-<div class="tabbed-content">
+```
+```{tab-item} Node.js
 ```bash
 npm install openai
 ```
-</div>
-</div>
+```
+```
 
 ## Chat Completions
 
 ### Basic Chat
 
-<div class="tabbed-set" data-tabs="2:3">
-<input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio">
-<label for="__tabbed_2_1">Python</label>
-<div class="tabbed-content">
+```{tab-set}
+```{tab-item} Python
 ```python
 from openai import OpenAI
 
@@ -49,10 +43,8 @@ response = client.chat.completions.create(
 
 print(response.choices[0].message.content)
 ```
-</div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio">
-<label for="__tabbed_2_2">JavaScript</label>
-<div class="tabbed-content">
+```
+```{tab-item} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -72,10 +64,8 @@ async function main() {
 
 main();
 ```
-</div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio">
-<label for="__tabbed_2_3">cURL</label>
-<div class="tabbed-content">
+```
+```{tab-item} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Content-Type: application/json" \
@@ -85,15 +75,13 @@ curl https://api.serika.dev/api/openai/v1/chat/completions \
     "messages": [{"role": "user", "content": "What is the capital of France?"}]
   }'
 ```
-</div>
-</div>
+```
+```
 
 ### Streaming Responses
 
-<div class="tabbed-set" data-tabs="3:3">
-<input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio">
-<label for="__tabbed_3_1">Python</label>
-<div class="tabbed-content">
+```{tab-set}
+```{tab-item} Python
 ```python
 from openai import OpenAI
 
@@ -112,10 +100,8 @@ for chunk in stream:
     if chunk.choices[0].delta.content is not None:
         print(chunk.choices[0].delta.content, end="")
 ```
-</div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio">
-<label for="__tabbed_3_2">JavaScript</label>
-<div class="tabbed-content">
+```
+```{tab-item} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -138,10 +124,8 @@ async function main() {
 
 main();
 ```
-</div>
-<input id="__tabbed_3_3" name="__tabbed_3" type="radio">
-<label for="__tabbed_3_3">cURL</label>
-<div class="tabbed-content">
+```
+```{tab-item} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Content-Type: application/json" \
@@ -152,17 +136,15 @@ curl https://api.serika.dev/api/openai/v1/chat/completions \
     "stream": true
   }'
 ```
-</div>
-</div>
+```
+```
 
 ## Image Generation
 
 ### Generate an Image
 
-<div class="tabbed-set" data-tabs="4:3">
-<input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio">
-<label for="__tabbed_4_1">Python</label>
-<div class="tabbed-content">
+```{tab-set}
+```{tab-item} Python
 ```python
 from openai import OpenAI
 
@@ -182,10 +164,8 @@ response = client.images.generate(
 image_url = response.data[0].url
 print(f"Image URL: {image_url}")
 ```
-</div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio">
-<label for="__tabbed_4_2">JavaScript</label>
-<div class="tabbed-content">
+```
+```{tab-item} JavaScript
 ```javascript
 import OpenAI from 'openai';
 
@@ -207,10 +187,8 @@ async function main() {
 
 main();
 ```
-</div>
-<input id="__tabbed_4_3" name="__tabbed_4" type="radio">
-<label for="__tabbed_4_3">cURL</label>
-<div class="tabbed-content">
+```
+```{tab-item} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/images/generations \
   -H "Content-Type: application/json" \
@@ -222,8 +200,8 @@ curl https://api.serika.dev/api/openai/v1/images/generations \
     "n": 1
   }'
 ```
-</div>
-</div>
+```
+```
 
 ## Advanced Usage
 
@@ -231,10 +209,8 @@ curl https://api.serika.dev/api/openai/v1/images/generations \
 
 You can influence the AI's personality by passing a `character_id` in the `extra_body` parameter (Python) or directly in the options (Node.js, if typed loosely, otherwise via custom request).
 
-<div class="tabbed-set" data-tabs="5:2">
-<input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio">
-<label for="__tabbed_5_1">Python</label>
-<div class="tabbed-content">
+```{tab-set}
+```{tab-item} Python
 ```python
 response = client.chat.completions.create(
     model="sao10k/l3.3-euryale-70b",
@@ -244,10 +220,8 @@ response = client.chat.completions.create(
     }
 )
 ```
-</div>
-<input id="__tabbed_5_2" name="__tabbed_5" type="radio">
-<label for="__tabbed_5_2">JavaScript</label>
-<div class="tabbed-content">
+```
+```{tab-item} JavaScript
 ```javascript
 const response = await client.chat.completions.create({
   model: 'sao10k/l3.3-euryale-70b',
@@ -255,5 +229,5 @@ const response = await client.chat.completions.create({
   character_id: 'your_character_id_here' // Note: Typescript might complain, cast to any if needed
 });
 ```
-</div>
-</div>
+```
+```

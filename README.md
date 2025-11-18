@@ -30,11 +30,11 @@ To build and view the documentation locally:
    ```
    pip install -r docs/requirements.txt
    ```
-3. Run the MkDocs development server:
+3. Build the documentation with Sphinx:
    ```
-   mkdocs serve
+   sphinx-build -b html docs/ docs/_build/html
    ```
-4. Open your browser and navigate to `http://localhost:8000`
+4. Open `docs/_build/html/index.html` in your browser.
 
 ## Contributing
 
