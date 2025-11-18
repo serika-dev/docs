@@ -11,6 +11,7 @@ author = 'Serika.dev'
 
 # -- General configuration ---------------------------------------------------
 
+extensions = [
     'myst_parser',
     'sphinx_rtd_theme',
 
