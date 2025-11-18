@@ -14,7 +14,7 @@ author = 'Serika.dev'
 extensions = [
     'myst_parser',
     'sphinx_rtd_theme',
-    'hoverxref.extension',
+
     'sphinx_design',
     'sphinx_copybutton',
 ]
@@ -42,28 +42,7 @@ myst_enable_extensions = [
     "tasklist",
 ]
 
-# -- Sphinx Hoverxref configuration ------------------------------------------
 
-hoverxref_auto_ref = True
-hoverxref_domains = ['py', 'cite']
-hoverxref_roles = [
-    'option',
-    'doc',
-    'term',
-]
-hoverxref_role_types = {
-    'hoverxref': 'modal',
-    'ref': 'modal',
-    'doc': 'modal',
-    'class': 'tooltip',
-    'func': 'tooltip',
-    'meth': 'tooltip',
-    'attr': 'tooltip',
-    'exc': 'tooltip',
-    'obj': 'tooltip',
-    'mod': 'tooltip',
-    'const': 'tooltip',
-}
 
 # -- Sphinx Design configuration ---------------------------------------------
 # No specific configuration needed for basic usage
