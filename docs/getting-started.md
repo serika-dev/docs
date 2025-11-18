@@ -1,78 +1,103 @@
 # Getting Started
 
-This guide will help you get up and running with the Serika.dev Customer API.
+Welcome to the Serika.dev API! This guide will help you make your first API request in minutes.
 
-## Prerequisites
+## 1. Get Your API Key
 
-Before you begin, you'll need:
+First, you need an API key.
+1. Log in to your [Serika.dev Developer Dashboard](https://developers.serika.dev).
+2. Navigate to the **API Keys** section.
+3. Click **Create New Key** and copy it.
 
-- A Serika.dev account
-- An API key (see [API Keys](guides/api-keys.md))
-- Basic knowledge of REST APIs
+## 2. Install the OpenAI Library
 
-## Step 1: Create an API Key
+Serika.dev is compatible with the standard OpenAI client libraries, making integration effortless.
 
-1. Log in to your Serika.dev account
-2. Navigate to the Developer section
-3. Click "Create API Key" and follow the prompts
-4. Store your key securely - it won't be shown again!
-
-## Step 2: Make Your First API Request
-
-Here's a simple example of generating text with the API:
-
+<div class="tabbed-set" data-tabs="1:2">
+<input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
+<label for="__tabbed_1_1">Python</label>
+<div class="tabbed-content">
 ```bash
-curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
--H "Authorization: sk-your-api-key" \
--H "Content-Type: application/json" \
--d '{
-  "messages": [
-    {"role": "user", "content": "Hello, how are you?"}
-  ],
-  "model": "euryale-70b"
-}'
+pip install openai
 ```
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio">
+<label for="__tabbed_1_2">Node.js</label>
+<div class="tabbed-content">
+```bash
+npm install openai
+```
+</div>
+</div>
 
-## Step 3: Explore the API
+## 3. Make Your First Request
 
-Explore the different endpoints available:
+Create a file named `test_api.py` (or `test_api.js`) and add the following code.
 
-- [Chat Completions](api/chat-completions.md) - Generate conversational responses
-- [Text Generation](api/text-generation.md) - Legacy endpoint for text generation
-- [Image Generation](api/image-generation.md) - Create images from text prompts
-- [Characters](api/characters.md) - Access Serika's character database
+<div class="tabbed-set" data-tabs="2:3">
+<input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio">
+<label for="__tabbed_2_1">Python</label>
+<div class="tabbed-content">
+```python
+from openai import OpenAI
 
-## Step 4: Handle Responses
+# Initialize the client with Serika's base URL
+client = OpenAI(
+    base_url="https://api.serika.dev/api/openai/v1",
+    api_key="YOUR_API_KEY_HERE"
+)
 
-All API responses are in JSON format. Here's an example of handling a response:
+# Create a chat completion
+response = client.chat.completions.create(
+    model="openai/gpt-4o-mini",
+    messages=[
+        {"role": "user", "content": "Hello, world!"}
+    ]
+)
 
+print(response.choices[0].message.content)
+```
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio">
+<label for="__tabbed_2_2">JavaScript</label>
+<div class="tabbed-content">
 ```javascript
-// Example: Handling a response in JavaScript
-const response = await fetch('https://api.serika.dev/api/openai/v1/chat/completions', {
-  method: 'POST',
-  headers: {
-    'Authorization': 'sk-your-api-key',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    messages: [
-      {role: 'user', content: 'Hello, how are you?'}
-    ],
-    model: 'euryale-70b'
-  })
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  baseURL: 'https://api.serika.dev/api/openai/v1',
+  apiKey: 'YOUR_API_KEY_HERE',
 });
+
+async function main() {
+  const completion = await client.chat.completions.create({
+    messages: [{ role: 'user', content: 'Hello, world!' }],
+    model: 'openai/gpt-4o-mini',
+  });
+
+  console.log(completion.choices[0].message.content);
+}
+
+main();
 ```
-
-## Step 5: Monitor Usage
-
-Keep track of your API usage to manage costs:
-
-1. Navigate to the Developer section of your Serika.dev account
-2. View the "API Usage" section for detailed metrics
-3. Set up usage alerts if needed
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio">
+<label for="__tabbed_2_3">cURL</label>
+<div class="tabbed-content">
+```bash
+curl https://api.serika.dev/api/openai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_API_KEY_HERE" \
+  -d '{
+    "model": "openai/gpt-4o-mini",
+    "messages": [{"role": "user", "content": "Hello, world!"}]
+  }'
+```
+</div>
+</div>
 
 ## Next Steps
 
-- Check out the [API Reference](api/overview.md) for detailed endpoint documentation
-- Learn about [Billing](guides/billing.md) and how usage is calculated
-- Explore [Examples](examples.md) for common use cases 
+- Explore [Chat Completions](api/chat-completions.md) to build conversational apps.
+- Check out [Image Generation](api/image-generation.md) to create art.
+- See the [Examples](examples.md) page for more code snippets.

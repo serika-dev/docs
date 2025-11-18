@@ -1,52 +1,25 @@
 # Serika.dev API Documentation
 
-Welcome to the Serika.dev API documentation. This guide will help you get started with the Serika.dev API and provide you with the information you need to integrate it into your applications.
+Welcome to the developer documentation for Serika.dev. Our API allows you to integrate powerful AI capabilities into your applications, including advanced chat completions and high-quality image generation.
 
-## API Overview
+## Key Features
 
-Serika.dev provides a powerful API for accessing state-of-the-art AI models for text and image generation. Our API is designed to be easy to use and integrate into your applications. It follows REST principles and uses standard HTTP methods.
-
-The API provides the following core functionality:
-
-- **Text Generation**: Generate human-like text for a variety of applications
-- **Chat Completions**: Create interactive, conversational experiences
-- **Image Generation**: Create high-quality images from text descriptions
-- **Characters**: Access and use predefined characters for your applications
+- **OpenAI Compatibility**: Drop-in replacement for the OpenAI API. Just change the `base_url`.
+- **Diverse Models**: Access a wide range of models including GPT-4o, Claude 3.5, Gemini Pro, and specialized roleplay models like Euryale.
+- **Image Generation**: Generate stunning images with NovelAI and TensorArt models.
+- **Jobs API**: Asynchronous processing for heavy tasks.
 
 ## Getting Started
 
-To get started with the Serika.dev API, follow these steps:
+If you are new to the API, we recommend starting with the **[Getting Started](getting-started.md)** guide.
 
-1. [Create an account](https://serika.dev/auth) on Serika.dev
-2. [Obtain an API key](guides/api-keys.md) from your dashboard
-3. Review the [Authentication](api/authentication.md) documentation
-4. Explore the [API Reference](api/overview.md) to learn about available endpoints
-5. Check out our [Examples](examples.md) for code samples in different languages
-6. Learn about [Best Practices](best-practices.md) for efficient API integration
+## API Reference
 
-## Base URL
-
-All API requests should be made to the following base URL:
-
-```
-https://api.serika.dev/api/openai/v1
-```
+- **[Chat Completions](api/chat-completions.md)**: Generate text and chat responses.
+- **[Image Generation](api/image-generation.md)**: Create images from text prompts.
+- **[Jobs API](api/jobs.md)**: Handle long-running tasks asynchronously.
+- **[Characters](api/characters.md)**: Interact with specific AI personas.
 
 ## Support
 
-If you have any questions or need assistance, please contact us at support@serika.dev or visit our [community forum](https://community.serika.dev).
-
-```bash
-# Example: Making a request with your API key
-curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
--H "Authorization: sk-your-api-key" \
--H "Content-Type: application/json" \
--d '{
-  "messages": [
-    {"role": "user", "content": "Hello, how are you today?"}
-  ],
-  "model": "euryale-70b"
-}'
-```
-
-Get started with the Serika.dev Customer API today! 
+If you need help, please join our community or contact support through the dashboard.

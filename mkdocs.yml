@@ -15,7 +15,9 @@ nav:
     - Chat Completions: api/chat-completions.md
     - Text Generation: api/text-generation.md
     - Image Generation: api/image-generation.md
+    - Jobs API: api/jobs.md
     - Characters: api/characters.md
+    - OAuth API: api/oauth.md
   - Guides:
     - API Keys: guides/api-keys.md
     - Billing: guides/billing.md

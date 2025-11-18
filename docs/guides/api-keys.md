@@ -4,14 +4,13 @@ This guide provides detailed information on how to create, manage, and secure yo
 
 ## Creating an API Key
 
-1. Log in to your Serika.dev account at [serika.dev](https://serika.dev)
-2. Navigate to the Developer section of your account
-3. Click on "API Keys" in the sidebar
-4. Click "Create New API Key"
-5. Enter a descriptive name for your key (e.g., "Development", "Production", "Testing")
-6. Select the permissions you want to grant to this key
-7. Click "Create API Key"
-8. Your new API key will be displayed only once - copy it and store it securely!
+1. Log in to your Serika.dev account at [developers.serika.dev](https://developers.serika.dev)
+2. Navigate to the **API Keys** section
+3. Click **Create New API Key**
+4. Enter a descriptive name for your key (e.g., "Development", "Production")
+5. Select the permissions you want to grant
+6. Click **Create API Key**
+7. Copy your new key immediately. You won't be able to see it again!
 
 ```
 sk-abcdefghijklmnopqrstuvwxyz123456789
@@ -34,141 +33,91 @@ Limiting permissions is a good security practice - only grant the permissions th
 
 ### Viewing Your API Keys
 
-1. Navigate to the Developer section
-2. Click on "API Keys" to see a list of all your API keys
+1. Navigate to the [Developer Dashboard](https://developers.serika.dev)
+2. Click on **API Keys** to see a list of all your keys
 3. The list shows each key's name, creation date, last used date, and status
-
-### Updating API Key Permissions
-
-1. Find the key you want to update in your API keys list
-2. Click on "Edit" or the key's name
-3. Modify the permissions as needed
-4. Click "Save Changes"
 
 ### Regenerating an API Key
 
-If you believe your API key has been compromised, you should regenerate it:
+If you believe your API key has been compromised:
 
-1. Find the key in your API keys list
-2. Click "Regenerate"
-3. Confirm that you want to regenerate the key
-4. Copy the new key value and update it in all your applications
+1. Find the key in your list
+2. Click **Regenerate**
+3. Confirm the action
+4. Update your applications with the new key immediately
 
-**Note**: The previous key will immediately stop working once regenerated.
-
-### Disabling an API Key
-
-To temporarily disable an API key:
-
-1. Find the key in your API keys list
-2. Toggle the "Active" switch to disable it
-3. The key will remain in your list but will no longer work for API requests
-4. You can re-enable it at any time by toggling the switch back
+**Note**: The old key will stop working instantly.
 
 ### Deleting an API Key
 
-To permanently delete an API key:
+To permanently remove access:
 
-1. Find the key in your API keys list
-2. Click "Delete"
-3. Confirm the deletion
-4. The key and all its usage history will be permanently removed
-
-## API Key Usage Tracking
-
-Serika.dev tracks the usage of each API key, including:
-
-- Number of requests
-- Number of tokens used for text generation
-- Number of images generated
-- Success and failure rates
-
-You can view this information in the Developer section under "API Usage".
+1. Find the key in your list
+2. Click **Delete**
+3. Confirm deletion
 
 ## API Key Security Best Practices
 
-1. **Never share your API keys** in public repositories, client-side code, or with unauthorized users
-2. **Use environment variables** to store API keys in your applications
-3. **Create separate keys** for different environments (development, staging, production)
-4. **Limit permissions** to only what each integration needs
-5. **Rotate keys regularly**, especially for production applications
-6. **Monitor usage** to detect unexpected activity
-7. **Regenerate keys** immediately if you suspect they've been compromised
-
-## Billing and Usage Limits
-
-API keys may have different rate limits and capabilities based on your account type:
-
-- **Free accounts**: Limited to certain models and lower rate limits
-- **Accounts with billing**: Access to premium models and higher rate limits
-
-For detailed information about billing and usage, see the [Billing](billing.md) guide.
+1. **Never share your API keys** in public repositories or client-side code.
+2. **Use environment variables** to store API keys.
+3. **Create separate keys** for different environments (dev, prod).
+4. **Rotate keys regularly** for production applications.
 
 ## Examples
 
-### Using API Keys with cURL
+Here is how to use your API key with different languages.
 
+<div class="tabbed-set" data-tabs="1:3">
+<input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
+<label for="__tabbed_1_1">Python</label>
+<div class="tabbed-content">
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.serika.dev/api/openai/v1",
+    api_key="sk-your-api-key"
+)
+
+response = client.chat.completions.create(
+    model="openai/gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello!"}]
+)
+print(response.choices[0].message.content)
+```
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio">
+<label for="__tabbed_1_2">JavaScript</label>
+<div class="tabbed-content">
+```javascript
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  baseURL: 'https://api.serika.dev/api/openai/v1',
+  apiKey: 'sk-your-api-key',
+});
+
+async function main() {
+  const response = await client.chat.completions.create({
+    model: 'openai/gpt-4o-mini',
+    messages: [{ role: 'user', content: 'Hello!' }],
+  });
+  console.log(response.choices[0].message.content);
+}
+main();
+```
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio">
+<label for="__tabbed_1_3">cURL</label>
+<div class="tabbed-content">
 ```bash
-curl -X POST https://api.serika.dev/api/openai/v1/chat/completions \
-  -H "Authorization: sk-your-api-key" \
+curl https://api.serika.dev/api/openai/v1/chat/completions \
+  -H "Authorization: Bearer sk-your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
-    "messages": [
-      {"role": "user", "content": "What is the capital of France?"}
-    ],
-    "model": "euryale-70b"
+    "model": "openai/gpt-4o-mini",
+    "messages": [{"role": "user", "content": "Hello!"}]
   }'
 ```
-
-### Using API Keys with Node.js
-
-```javascript
-const axios = require('axios');
-
-async function callAPI() {
-  try {
-    const response = await axios.post(
-      'https://api.serika.dev/api/openai/v1/chat/completions',
-      {
-        messages: [
-          {role: 'user', content: 'What is the capital of France?'}
-        ],
-        model: 'euryale-70b'
-      },
-      {
-        headers: {
-          'Authorization': 'sk-your-api-key',
-          'Content-Type': 'application/json'
-        }
-      }
-    );
-    
-    console.log(response.data);
-  } catch (error) {
-    console.error('Error:', error.response ? error.response.data : error.message);
-  }
-}
-
-callAPI();
-```
-
-### Using API Keys with Python
-
-```python
-import requests
-
-url = "https://api.serika.dev/api/openai/v1/chat/completions"
-headers = {
-    "Authorization": "sk-your-api-key",
-    "Content-Type": "application/json"
-}
-data = {
-    "messages": [
-        {"role": "user", "content": "What is the capital of France?"}
-    ],
-    "model": "euryale-70b"
-}
-
-response = requests.post(url, headers=headers, json=data)
-print(response.json())
-``` 
+</div>
+</div>
