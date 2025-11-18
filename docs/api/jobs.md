@@ -33,8 +33,8 @@ Submit a new image generation job. This is required for models that are marked a
 
 ### Example Request
 
-```{tabs}
-```{group-tab} Python
+````` {tabs}
+```` {group-tab} Python
 ```python
 import requests
 import time
@@ -78,8 +78,8 @@ while True:
         
     time.sleep(2) # Wait 2 seconds before checking again
 ```
-```
-```{group-tab} JavaScript
+````
+```` {group-tab} JavaScript
 ```javascript
 const axios = require('axios');
 
