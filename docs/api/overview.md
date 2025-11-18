@@ -78,7 +78,7 @@ All responses are returned in JSON format. Successful responses typically includ
 
 Rate limits vary based on your account type and subscription:
 
-- **Free tier**: Limited requests per minute.
+- **Free tier**: Not available for API endpoints; only limited character information is free.
 - **Premium tier**: Higher rate limits for production use.
 
 API requests that exceed these limits will receive a `429 Too Many Requests` status code.

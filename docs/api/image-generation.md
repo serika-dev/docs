@@ -76,7 +76,7 @@ curl https://api.serika.dev/api/openai/v1/images/generations \
 
 ## Available Models
 
-### Free Tier Models
+### Premium Tier Models (All models require billing)
 
 | Model ID | Name | Description | Provider |
 |----------|------|-------------|----------|

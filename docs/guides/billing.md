@@ -45,9 +45,7 @@ To view your API usage:
 
 ### Free Tier
 
-- Access to select models (e.g., `openai/gpt-4o-mini`, `sao10k/l3.3-euryale-70b`).
-- Limited monthly token allowance.
-- Rate limited.
+- No free API tier; only limited character information is available without billing.
 
 ### Premium Tier
 

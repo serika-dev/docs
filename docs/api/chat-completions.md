@@ -84,7 +84,7 @@ curl https://api.serika.dev/api/openai/v1/chat/completions \
 
 ## Available Models
 
-### Free Tier Models
+### Premium Tier Models (All models require billing)
 
 | Model ID | Name | Description | Provider |
 |----------|------|-------------|----------|
