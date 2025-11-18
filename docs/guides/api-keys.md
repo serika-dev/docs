@@ -67,8 +67,8 @@ To permanently remove access:
 
 Here is how to use your API key with different languages.
 
-```{tabs}
-```{group-tab} Python
+````` {tabs}
+```` {group-tab} Python
 ```python
 from openai import OpenAI
 
@@ -102,8 +102,8 @@ async function main() {
 }
 main();
 ```
-```
-```{group-tab} cURL
+````
+```` {group-tab} cURL
 ```bash
 curl https://api.serika.dev/api/openai/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key" \
@@ -113,5 +113,5 @@ curl https://api.serika.dev/api/openai/v1/chat/completions \
     "messages": [{"role": "user", "content": "Hello!"}]
   }'
 ```
-```
-```
+````
+`````
