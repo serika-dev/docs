@@ -14,7 +14,7 @@ author = 'Serika.dev'
 extensions = [
     'myst_parser',
     'sphinx_rtd_theme',
-    'sphinx_hoverxref',
+    'hoverxref.extension',
     'sphinx_design',
     'sphinx_copybutton',
 ]
